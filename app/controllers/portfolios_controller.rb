@@ -8,7 +8,7 @@ class PortfoliosController < ApplicationController
     end
 
 
-def create
+ def create
     @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
 
     respond_to do |format|
@@ -37,5 +37,9 @@ def create
             
           end
         end
+    end
+
+    def show
+        @portfolio_item = Portfolio.find(params[:id])
     end
 end
