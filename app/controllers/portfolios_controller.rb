@@ -22,4 +22,19 @@ def create
     end
   end
 
+  def edit
+    @portfolio_item = Portfolio.find(params[:id])
+  end
+
+  def update
+    respond_to do |format|
+      if @portfolio_item.update(blog_params)
+        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
+        format.json { render :show, status: :ok, location: @blog }
+      else
+        format.html { render :edit }
+        format.json { render json: @blog.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 end
