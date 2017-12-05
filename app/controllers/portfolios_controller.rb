@@ -1,15 +1,20 @@
 class PortfoliosController < ApplicationController
-    def index
-        @portfolio_items = Portfolio.all
-    end
+  def index
+    @portfolio_items = Portfolio.all
+  end
 
-    def new
-        @portfolio_item = Portfolio.new
-    end
+  def new
+    @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
+  end
+
+  def angular
+    @angular_portfolio_items = Portfolio.angular
+  end
 
 
  def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
 
     respond_to do |format|
       if @portfolio_item.save
@@ -42,4 +47,20 @@ class PortfoliosController < ApplicationController
     def show
         @portfolio_item = Portfolio.find(params[:id])
     end
+
+    def destroy
+      #perform the lookup
+      @portfolio_item = Portfolio.find(params[:id])
+
+
+      @portfolio_item.destroy
+
+      #redirect
+      respond_to do |format|
+        format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
+        
+      
+    end
+  end
+
 end
