@@ -42,4 +42,20 @@ class PortfoliosController < ApplicationController
     def show
         @portfolio_item = Portfolio.find(params[:id])
     end
+
+    def destroy
+      #perform the lookup
+      @portfolio_item = Portfolio.find(params[:id])
+
+
+      @portfolio_item.destroy
+
+      #redirect
+      respond_to do |format|
+        format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
+        
+      
+    end
+  end
+
 end
