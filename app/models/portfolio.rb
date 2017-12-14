@@ -1,7 +1,6 @@
 class Portfolio < ApplicationRecord
-
   has_many :technologies
-  accepts_nested_attributes_for :technologies, 
+  accepts_nested_attributes_for :technologies,
                                 reject_if: lambda { |attrs| attrs['name'].blank? }
 
   include Placeholder
@@ -11,7 +10,7 @@ class Portfolio < ApplicationRecord
     where(subtitle: 'Angular')
   end
 
-  scope :ruby_on_rails_portfolio_itens, -> { where(subtitle: 'Ruby on Rails') }
+  scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails') }
 
   after_initialize :set_defaults
 
@@ -19,8 +18,4 @@ class Portfolio < ApplicationRecord
     self.main_image ||= Placeholder.image_generator(height: '600', width: '400')
     self.thumb_image ||= Placeholder.image_generator(height: '350', width: '200')
   end
-
 end
-
-#main_image: "http://via.placeholder.com/600x400",
-#thumb_image: "http://via.placeholder.com/350x200"
