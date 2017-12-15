@@ -59,5 +59,5 @@ gem 'homers_view_tool', git: "https://github.com/Uthaeus/homers_view_tool"
 gem 'petergate', '~> 1.8', '>= 1.8.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
-
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
