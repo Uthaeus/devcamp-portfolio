@@ -57,5 +57,10 @@ end
 
 puts "3 technologies created"
 
-
+User.create(email: "this@something.com",
+            password: "abcdef",
+            password_confirmation: "abcdef",
+            name: "Homer",
+            roles: "site_admin"
+            )
 
