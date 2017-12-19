@@ -29,10 +29,8 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully created.' }
-        format.json { render :show, status: :created, location: @portfolio_item }
       else
         format.html { render :new }
-        format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -47,29 +45,27 @@ class PortfoliosController < ApplicationController
         if @portfolio_item.update(portfolio_params)
             format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
             
-          else
-            format.html { render :edit }
-            
-          end
+        else
+          format.html { render :edit }
+          
         end
-    end
+      end
+  end
 
-    def show
-        
-    end
-
-    def destroy
-      #perform the lookup
-
-
-      @portfolio_item.destroy
-
-      #redirect
-      respond_to do |format|
-        format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.' }
-        
+  def show
       
+  end
+
+  def destroy
+    #perform the lookup
+    @portfolio_item.destroy
+
+    #redirect
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully deleted.' }
+         
     end
+
   end
 
   private
@@ -83,6 +79,7 @@ class PortfoliosController < ApplicationController
                                       technologies_attributes: [:id, :name, :_destroy]
                                       )
   end
+  
   def set_portfolio_item
     @portfolio_item = Portfolio.find(params[:id])
   end
