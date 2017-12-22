@@ -91,4 +91,4 @@ Rails.application.configure do
 
   config.action_cable.allowed_request_origins = ['https://homers-portfolio.herokuapp.com', 'http://homers-portfolio.herokuapp.com']
   config.action_cable.url = "wss://homers-portfolio.herokuapp.com/cable"
-endgit 
+end
