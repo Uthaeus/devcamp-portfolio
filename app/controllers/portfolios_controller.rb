@@ -58,6 +58,7 @@ class PortfoliosController < ApplicationController
 
   def destroy
     #perform the lookup
+    @portfolio_item = Portfolio.find(params[:id])
     @portfolio_item.destroy
 
     #redirect
