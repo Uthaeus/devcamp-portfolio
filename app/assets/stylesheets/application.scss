@@ -21,6 +21,17 @@ a:hover {
   border: .05rem solid #fff;
 }
 
+.front-items {
+  float: left;
+  margin-top: 40px;
+  margin-right: 40px;
+  color: rgb(137, 138, 141);
+}
+
+.nav-name {
+  margin-left: -50px;
+  color: rgb(137, 138, 141);
+}
 
 /*
  * Base structure
@@ -234,9 +245,9 @@ h6, .h6 {
 }
 
 .app-card-container {
-  color: black;
+  color: rgb(137, 138, 141);
   text-align: left;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .app-card-container > .card {
