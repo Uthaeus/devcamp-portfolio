@@ -25,6 +25,5 @@ module ApplicationCable
         verified_user
       end
     end
-
   end
 end
