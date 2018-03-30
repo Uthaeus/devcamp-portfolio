@@ -5,7 +5,7 @@
   <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
 
   <p>
-    <%= markdown blog.body %>
+    <%= blog.body %>
   </p>
   <small>comments- <%= blog.comments.count %></small>
 </div>
