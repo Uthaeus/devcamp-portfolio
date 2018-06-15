@@ -8,6 +8,34 @@
   </div>
 
   <div class="col-sm-4">
-    <%= link_to 'My Projects', portfolios_path, class: 'btn port-btn btn-block' %>
+    <div class="text-center">
+      <button
+        class="btn btn-outline-info btn-block"
+        type="button"
+        data-toggle="collapse"
+        data-target="#projects-home"
+        aria-expanded="false"
+        aria-controller="projects"
+      >
+        My Projects
+      </button>
+      <div class="collapse" id="projects-home">
+        <div class="card card-block">
+          <%= link_to "All Projects", portfolios_path, class: "drop-item" %>
+        </div>
+        <div class="card card-block">
+          <%= link_to "Overtime App", "https://homers-overtime.herokuapp.com/", target: "_blank", class: "drop-item" %>
+        </div>
+        <div class="card card-block">
+          <%= link_to "Salon App", "https://asl-salon.herokuapp.com/", target: "_blank", class: "drop-item" %>
+        </div>
+        <div class="card card-block">
+          <%= link_to "Yankees Team App", "https://lehi-yankees.herokuapp.com/", target: "_blank", class: "drop-item" %>
+        </div>
+        <div class="card card-block">
+          <%= link_to "Vaccination App", "https://vaccination-form-app.herokuapp.com/", target: "_blank", class: "drop-item" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

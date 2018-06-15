@@ -290,11 +290,6 @@ h6, .h6 {
   margin-bottom: 40px;
 }
 
-.port-btn {
-  color: black;
-  background-color: grey;
-}
-
 .socials {
   padding: 20px;
   float: right;
@@ -310,6 +305,16 @@ h6, .h6 {
 .social-btn:hover {
   color: #9a9ba5;
   font-size: 1.8em;
+}
+
+.drop-item {
+  color: blue;
+  margin: 5px;
+}
+
+.drop-item:hover {
+  color: cornflowerblue;
+  text-decoration: none;
 }
 
 
